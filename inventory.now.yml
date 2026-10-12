@@ -1,4 +1,5 @@
 # now.yml
+---
 plugin: servicenow.itsm.now
 inventory_hostname_source: host_name
 columns:
