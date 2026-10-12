@@ -1,22 +1,19 @@
----
+# now.yml
 plugin: servicenow.itsm.now
-table: cmdb_ci_server
-inventory_hostname_source: name
-ansible_host_source: ip_address
+inventory_hostname_source: host_name
 columns:
-- name
-- host_name
-- fqdn
-- ip_address
-- order_date
-- maintenance_schedule
-- operational_status
+  - host_name
+  - name
+  - fqdn
+  - ip_address
+  - os
+  - classification
+  - sys_id
 compose:
-    cost: cost ~ " " ~ cost_cc
+  ip_addr: ip_address
+  ansible_host: host_name
 keyed_groups:
-  - key: manufacturer
+  - key: os
     separator: ""
-  - key: virtual
-query:
-  - operational_status: "!= 6"
-#   - manufacturer: = AWS
+  - key: classification
+    separator: ""
