@@ -1,6 +1,5 @@
 plugin: servicenow.itsm.now
-table: cmdb_ci_server
-inventory_hostname_source: name
+inventory_hostname_source: host_name
 columns:
   - host_name
   - name
